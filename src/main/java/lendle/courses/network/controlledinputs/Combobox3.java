@@ -40,6 +40,11 @@ public class Combobox3 extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apple", "Book", "Cat", "Door", "Egg" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,9 +74,21 @@ public class Combobox3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         String value=(String) jComboBox1.getSelectedItem();
         //select the corresponding value if jComboBox2
-        
+        for(int i=0;i<jComboBox2.getItemCount();i++){
+            String value2=jComboBox2.getItemAt(i);
+            if(value2.startsWith(value)){
+                jComboBox2.setSelectedIndex(i);
+                 break;
+            }
+        }
+            
+            
         ///////////////////////////////////////////////
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
